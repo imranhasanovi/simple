@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>connect us</title>
+  <link rel="stylesheet" href="./all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <!-- optional css -->
     <link rel="stylesheet" href="contact.css">
+
 </head>
 <body>
 
+    <!-- user input js (optional) -->
+    <div class="context">
+        <h2>
+            <script>
+                let name = prompt("enter your name : ");
+                document.write("hello "+name+" ,how you want to connect us </br>");
+                document.write("choose an option");
+            </script>
+        </h2>
+    </div>
+    <!--  -->
+
     <section>
         <div class="contact-container">
-            <div class="inner-container">
+            <!-- for messege content -->
+            <div class="inner-container-1">
                 <h2>messege us</h2>
                 <hr>
-                <!--  -->
                 <form action="#">
-                    <!--  -->
                     <div class="form-row">
                         <div class="input-data">
                             <input type="text" id="firstname" required>
@@ -27,7 +42,6 @@
                             <label for="lastname" class="lastname">last name</label>
                         </div>
                     </div>
-                    <!--  -->
                     <div class="form-row">
                         <div class="input-data">
                             <input type="text" id="phone" required>
@@ -38,18 +52,69 @@
                             <label for="email" class="email" required>email</label>
                         </div>
                     </div>
-                    <!--  -->
                     <div class="input-messege">
                         <textarea name="messege" id="messege" cols="30" rows="3" required></textarea>
                         <label for="messege" class="messege">write your messege</label>
                     </div>
                     <button type="submit" class="submit-btn">send</button>
-                    <!--  -->
                 </form>
-                <!--  -->
             </div>
+
+            <!-- for contact address -->
+
+            <div class="inner-container-2">
+                <h2>contact us</h2>
+                <hr>
+                <div class="contact-data">
+                    <span><a class="fas fa-home" id="contact-info-icon"></a>Chittagong,Bangladesh</span>
+                    <span><a class="fas fa-mail-bulk" id="contact-info-icon"></a>softechlearner@gmail.com</span>
+                    <span><a class="fas fa-phone-alt" id="contact-info-icon"></a>+880-123456789</span>
+                    <span><a class="fas fa-globe" id="contact-info-icon"></a>www.softechlearner.com</span>
+                    <h3>find us on social media</h3>
+                    <ul>
+                        <li><a href="" class="fab fa-facebook" id="social-icon"></a></li>
+                        <li><a href="" class="fab fa-instagram" id="social-icon"></a></li>
+                        <li><a href="" class="fab fa-twitter" id="social-icon"></a></li>
+                        <li><a href="" class="fab fa-linkedin" id="social-icon"></a></li>
+                        <li><a href="" class="fab fa-whatsapp" id="social-icon"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- messege & contact container end -->
         </div>
     </section>
+    <!-- messege & contact button -->
+
+    <div class="contact-option">
+        <div class="messege-btn" >
+            <label for="messege" onclick="messege()">messege us</label>
+        </div>
+        <p>or</p>
+        <div class="contact-btn">
+            <label for="contact" onclick="contact()">contact us</label>
+        </div>
+    </div>
+
+    <!-- external js -->
+
+    <script src="./all.min.js"></script>
+
+    <script>
+        let messegeContent = document.querySelector(".inner-container-1");
+        let contactContent = document.querySelector(".inner-container-2");
+        let context = document.querySelector(".context");
+
+        function messege() {
+            messegeContent.classList.add("show");
+            contactContent.classList.remove("show");
+            context.classList.add("hide");
+        }
+        function contact() {
+            contactContent.classList.add("show");
+            messegeContent.classList.remove("show");
+            context.classList.add("hide");
+        }
+    </script>
 
 </body>
 </html>
